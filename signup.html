@@ -17,9 +17,12 @@
     <main>
         <h2>Sign Up</h2>
         <form onsubmit="return signup(event)" action="login.html">
-            <label>Email<br><input type="email" name="email" required></label><br>
-            <label>Password<br><input type="password" name="password" required></label><br>
-            <label>Name<br><input name="name"></label><br>
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" name="email" required>
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" name="password" required>
+            <label for="signup-name">Name</label>
+            <input id="signup-name" name="name">
             <input type="submit" value="Sign Up">
         </form>
     </main>

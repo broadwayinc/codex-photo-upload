@@ -19,8 +19,10 @@
     <main>
         <h2>Upload Photo</h2>
         <form onsubmit="return uploadPhoto(event)" enctype="multipart/form-data" action="gallery.html">
-            <label>Description<br><input name="description"></label><br>
-            <label>Photo<br><input type="file" name="picture" accept="image/*" multiple required></label><br>
+            <label for="description">Description</label>
+            <input id="description" name="description">
+            <label for="photo">Photo</label>
+            <input id="photo" type="file" name="picture" accept="image/*" multiple required>
             <input type="submit" value="Upload">
         </form>
         <div id="upload-progress"></div>
