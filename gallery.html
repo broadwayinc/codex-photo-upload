@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Photo Upload App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="upload.html">Upload</a>
+        <form onsubmit="return logout(event)" class="logout-form">
+            <input type="submit" value="Logout">
+        </form>
+    </nav>
+    <main>
+        <h2>Gallery</h2>
+        <div id="gallery" class="gallery-grid"></div>
+    </main>
+</body>
+</html>

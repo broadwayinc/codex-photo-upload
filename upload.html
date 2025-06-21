@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Photo - Photo Upload App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <form onsubmit="return logout(event)" class="logout-form">
+            <input type="submit" value="Logout">
+        </form>
+    </nav>
+    <main>
+        <h2>Upload Photo</h2>
+        <form onsubmit="return uploadPhoto(event)" enctype="multipart/form-data" action="gallery.html">
+            <label>Description<br><input name="description"></label><br>
+            <label>Photo<br><input type="file" name="picture" accept="image/*" multiple required></label><br>
+            <input type="submit" value="Upload">
+        </form>
+        <div id="upload-progress"></div>
+    </main>
+</body>
+</html>
