@@ -54,13 +54,36 @@ function loadGallery() {
         res.list.forEach(rec => {
             if (rec.bin && rec.bin.picture) {
                 rec.bin.picture.forEach(file => {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'photo-item';
+
                     const img = document.createElement('img');
                     img.src = file.url;
-                    container.appendChild(img);
+                    wrap.appendChild(img);
+
+                    const btn = document.createElement('button');
+                    btn.textContent = 'Delete';
+                    btn.addEventListener('click', () => deletePhoto(rec.record_id, wrap));
+                    wrap.appendChild(btn);
+
+                    container.appendChild(wrap);
                 });
             }
         });
     });
+}
+
+function deletePhoto(record_id, element) {
+    if (!confirm('Delete this photo?')) {
+        return;
+    }
+    skapi.deleteRecords({ table: 'photos', record_id })
+        .then(() => {
+            if (element) {
+                element.remove();
+            }
+        })
+        .catch(err => alert(err.message));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
