@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Photo Upload App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <main>
+        <h2>Sign Up</h2>
+        <form onsubmit="return signup(event)" action="login.html">
+            <label>Email<br><input type="email" name="email" required></label><br>
+            <label>Password<br><input type="password" name="password" required></label><br>
+            <label>Name<br><input name="name"></label><br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </main>
+</body>
+</html>
